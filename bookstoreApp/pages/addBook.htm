@@ -1,16 +1,52 @@
 <div layout="row" layout-align="center center" layout-wrap class="innerContentStyle">
-    <div class="fontSize28px">Add new Book</div>
+    <div flex="100" class="fontSize28px alignAtCenter">Add new Book</div>
 
-
-    <form ng-submit="addBook()">
-        <input type="text" ng-model="newBook.title" value="Title">
-        <input type="text" ng-model="newBook.subtitle" value="Description">
-        <input type="text" ng-model="newBook.author" value="Author name">
-        <input type="text" ng-model="newBook.publisher" value="Publisher">
-        <input type="text" ng-model="newBook.published" value="Year">
-        <input type="text" ng-model="newBook.pages" value="Page numbers">
-        <input type="text" ng-model="newBook.isbn" value="ISBN">
-        <input type="submit" value="SAVE">
+                      <!-- Add New Book Form -->
+    <form flex="70" flex-sm="85" flex-xs="95" ng-submit="addBook()">
+        <div class="addBookFormContents md-padding marginTop24px">
+            <div layout="row" layout-align="start center">
+                <span class="formInputLabel">Title:</span>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <input type="text" ng-model="newBook.title" value="Title">
+                </md-input-container>
+            </div>
+            <div layout="row" layout-align="start center">
+                <span class="formInputLabel">Description:</span>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <input type="text" ng-model="newBook.description" value="Description">
+                </md-input-container>
+            </div>
+            <div layout="row" layout-align="start center">
+                <span class="formInputLabel">Author name:</span>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <input type="text" ng-model="newBook.author" value="Author name">
+                </md-input-container>
+            </div>
+            <div layout="row" layout-align="start center">
+                <span class="formInputLabel">Publisher:</span>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <input type="text" ng-model="newBook.publisher" value="Publisher">
+                </md-input-container>
+            </div>
+            <div layout="row" layout-align="start center">
+                <span class="formInputLabel">Year:</span>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <input type="text" ng-model="newBook.published" value="Year">
+                </md-input-container>
+            </div>
+            <div layout="row" layout-align="start center">
+                <span class="formInputLabel">Page numbers:</span>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <input type="text" ng-model="newBook.pages" value="Page numbers">
+                </md-input-container>
+            </div>
+            <div layout="row" layout-align="start center">
+                <span class="formInputLabel">ISBN:</span>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <input type="text" ng-model="newBook.isbn" value="ISBN">
+                </md-input-container>
+            </div>
+        </div>
+        <md-button type="submit" class="submitNewBookBtn">SAVE</md-button>
     </form>
-
 </div>

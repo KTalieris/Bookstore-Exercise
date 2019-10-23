@@ -1,14 +1,9 @@
 // CONTROLLERS
 
-/* Controller for the Home Page*/
-bookStoreApp.controller('homeController', ['$scope', '$rootScope', 'bookService', function($scope, $rootScope, bookService) {
-
-}]);
-
 /* Controller for the Add Book Page*/
 bookStoreApp.controller('addBookController', ['$scope', '$rootScope', 'bookService', function($scope, $rootScope, bookService) {
     $scope.newBook = {
-        image:'',
+        image:'images/book_image.png',
         isbn: '',
         title: '',
         subtitle: '',
@@ -22,8 +17,13 @@ bookStoreApp.controller('addBookController', ['$scope', '$rootScope', 'bookServi
 
     /* Add the new book */
     $scope.addBook = function () {
-        $rootScope.bookList = bookService.addInBooks($scope.newBook);
-        $scope.lookForNewBook();
+        /* Ensure that user creates at least a book with title and description */
+        if($scope.newBook.title && $scope.newBook.description){
+            $rootScope.bookList = bookService.addInBooks($scope.newBook);
+            $scope.lookForNewBook();
+        } else {
+            alert('Your new book should have at least title and description!');
+        }
     }
 
     /* Check if the book was pushed successfully into the Book list and redirect to your new book page */
@@ -52,6 +52,27 @@ bookStoreApp.controller('searchController', ['$scope', '$rootScope', '$resource'
             window.location.href = '#/Category';
         }
     }
+
+    /* Make the slick slider responsive */
+    $scope.breakpoints = [
+        {
+            breakpoint: 960,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                autoplay:true,
+                speed:5000,
+            }
+        }, {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay:true,
+                speed:5000,
+            }
+        }
+    ];
 
     /* Decided not use the following method in order to retrieve the data,
     because the inner quotes in expression "you don't know js" didn't allow the response to be validated as JSON */

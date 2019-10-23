@@ -62,11 +62,37 @@
     </div>
 </div>
 <div class="marginTop12px">
-    <h4>Other books you may like</h4>
-    <slick ng-if="bookList.length" init-onload="false" data="true" slides-to-show="3" dots="true">
+    <h4 class="bookSuggestionTitle marginBottom28px">Other books you may like</h4>
+    <slick ng-if="bookList.length" init-onload="false" data="true" responsive="breakpoints" slides-to-show="4" slides-to-scroll=3 dots="true" autoplay="true"
+           speed="500" cssEase="linear" autoplaySpeed="2" class="bookSlider">
         <div ng-repeat="item in bookList">
-            <!--<img ng-src="{{ item.image }}" alt="{{ item.title}}"/>-->
-            <span class="carouselBookTitle" ng-click="showBookInDetail(item.title);">{{item.title}}</span>
+            <div layout="row" layout-align="center center" layout-wrap class="carouselBook" ng-click="showBookInDetail(item.title);">
+                <img class="carouselImage" ng-src="{{ item.image }}" alt="{{ item.title}}"/>
+                <div flex="100" class="carouselBookTitle">{{item.title}}</div>
+            </div>
         </div>
     </slick>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

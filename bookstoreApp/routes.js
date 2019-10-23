@@ -4,9 +4,10 @@ bookStoreApp.config(function ($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
 
   $routeProvider
+
       .when('/', {
-        templateUrl: 'pages/home.htm',
-        controller: 'homeController'
+        templateUrl: 'pages/search.htm',
+        controller: 'searchController'
       })
 
       .when('/Search', {

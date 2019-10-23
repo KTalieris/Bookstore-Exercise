@@ -14,7 +14,7 @@
 
     <!-- At the moment Search only by book's title -->
     <div layout="row" layout-wrap>
-        <div ng-click="showBookInDetail(item.title);" flex="25" flex-sm="33" flex-xs="90"
+        <div ng-click="showBookInDetail(item.title);" flex="25" flex-sm="33" flex-xs="80"
              ng-repeat="item in bookList | filter: {title: searchBook}" class="smallBook">
             <img alt="book image" class="responsiveImg" src="images/book_image.png">
             <div class="smallBookTitle">{{item.title}}</div>
