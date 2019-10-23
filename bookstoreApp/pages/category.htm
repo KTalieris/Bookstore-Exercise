@@ -1,0 +1,72 @@
+<div ng-model="chosenBook" class="marginBottom48px">
+    <!-- If the user has selected a book show book's details -->
+    <div ng-if="chosenBook" layout="row" layout-wrap layout-align="space-around start" layout-wrap class="innerContentStyle">
+        <div flex="25" flex-sm="40" flex-xs="70">
+            <img alt="book image" class="responsiveImg" ng-src="{{chosenBook.image}}">
+            <div hide-xs layout="row" layout-align="start center">
+                <img alt="avatar" class="authorAvatar" src="images/avatar.png">
+                <div class="fontSize12px marginLeft16px">{{chosenBook.author}}</div>
+            </div>
+        </div>
+        <div flex="40" flex-sm="50" flex-xs="90" class="md-padding">
+            <div class="bookTitle">{{chosenBook.title}}</div>
+            <div class="marginTop12px fontSize12px">{{chosenBook.description}}</div>
+            <div layout="row" layout-align="start end" class="marginTop8px">
+                <md-button class="favorShareBtn">Favorite</md-button>
+                <md-button class="favorShareBtn">Share</md-button>
+            </div>
+            <div hide-gt-xs layout="row" layout-align="start center">
+                <img alt="avatar" class="authorAvatar" src="images/avatar.png">
+                <div class="fontSize12px marginLeft16px">{{chosenBook.author}}</div>
+            </div>
+            <div class="marginTop12px fontSize12px">Year: {{chosenBook.published}}</div>
+            <div class="fontSize12px">Number of Pages: {{chosenBook.pages}}</div>
+            <div class="marginTop12px fontSize12px">Publisher: {{chosenBook.publisher}}</div>
+            <div class="marginTop12px fontSize12px">ISBN: {{chosenBook.isbn}}</div>
+            <div layout="row" layout-align="center center" class="marginTop12px">
+                <md-button class="buyBtn">BUY</md-button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Show the default theming If user has not selected a book already -->
+    <div ng-if="!chosenBook" layout="row" layout-wrap layout-align="space-around start" layout-wrap class="innerContentStyle">
+        <div flex="25" flex-sm="40" flex-xs="70">
+            <img alt="book image" class="responsiveImg" src="images/book_no_image.png">
+            <div hide-xs layout="row" layout-align="start center">
+                <img alt="avatar" class="authorAvatar" src="images/avatar.png">
+                <div class="fontSize12px marginLeft16px">Author Name</div>
+            </div>
+        </div>
+        <div flex="40" flex-sm="50" flex-xs="90" class="md-padding">
+            <div class="bookTitle">Book Title</div>
+            <div class="marginTop12px fontSize12px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+            <div layout="row" layout-align="start end" class="marginTop8px">
+                <md-button class="favorShareBtn">Favorite</md-button>
+                <md-button class="favorShareBtn">Share</md-button>
+            </div>
+            <div hide-gt-xs layout="row" layout-align="start center">
+                <img alt="avatar" class="authorAvatar" src="images/avatar.png">
+                <div class="fontSize12px marginLeft16px">{{chosenBook.author}}</div>
+            </div>
+            <div class="marginTop12px fontSize12px">Year: 1970</div>
+            <div class="fontSize12px">Number of Pages: 874</div>
+            <div class="marginTop12px fontSize12px">Publisher: Self Published</div>
+            <div class="marginTop12px fontSize12px">ISBN: 1611433124</div>
+            <div layout="row" layout-align="center center" class="marginTop12px">
+                <md-button class="buyBtn">BUY</md-button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="marginTop12px">
+    <h4>Other books you may like</h4>
+    <slick ng-if="bookList.length" init-onload="false" data="true" slides-to-show="3" dots="true">
+        <div ng-repeat="item in bookList">
+            <!--<img ng-src="{{ item.image }}" alt="{{ item.title}}"/>-->
+            <span class="carouselBookTitle" ng-click="showBookInDetail(item.title);">{{item.title}}</span>
+        </div>
+    </slick>
+</div>

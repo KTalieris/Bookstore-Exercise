@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="bookStoreApp">
+<head>
+    <title>My Book Store</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- My css -->
+    <link type="text/css" rel="stylesheet" href="css/custom.css" media="screen,projection"/>
+
+    <!-- Slick Carousel css-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.css"/>
+    <link rel="stylesheet" href="http://vasyabigi.github.io/angular-slick/bower_components/slick-carousel/slick/slick.css" />
+
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://rawgit.com/angular/bower-material/master/angular-material.css">
+
+    <!-- fa icons Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+</head>
+<body>
+<md-content class="md-padding">
+    <md-toolbar layout="row" layout-align="center center" class="bookStoreBackgroundGrey toolbarStyling">
+        <div class="titleStyling">Bookstore</div>
+    </md-toolbar>
+    <ul>
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/Search">Search</a></li>
+        <li><a href="#/Category">Category</a></li>
+        <li><a href="#/Book/Add">Add new Book</a></li>
+    </ul>
+    <div id="mainContent" class="md-padding">
+        <!-- Show here the main content -->
+        <div layout="row" layout-wrap>
+            <div flex="100" ng-view></div>
+        </div>
+    </div>
+</md-content>
+
+<!-- Load angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+<!-- Load my Javascript -->
+<script src="app.js"></script>
+<script src="routes.js"></script>
+<script src="services.js"></script>
+<script src="controllers.js"></script>
+<script src="angular-slick.js"></script>
+
+
+<!-- AngularJS Material Library -->
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+
+<!-- Slick carousel -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="http://vasyabigi.github.io/angular-slick/bower_components/slick-carousel/slick/slick.js"></script>
+</body>
+</html>

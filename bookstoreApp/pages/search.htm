@@ -1,0 +1,24 @@
+<div layout="row" layout-align="center center" layout-wrap class="innerContentStyle">
+    <h2>Search to ﬁnd your new book </h2>
+    <div flex="100" class="searchPageSubtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+    </div>
+    <div flex="100" layout="row" layout-align="center center">
+        <input class="searchFieldStyling" flex="80" type="text" ng-model="searchBook"/>
+    </div>
+
+    <!--<md-radio-group ng-model="filterData">-->
+    <!--<md-radio-button value="name" class="md-primary">Name</md-radio-button>-->
+    <!--<md-radio-button value="email"> Email </md-radio-button>-->
+    <!--</md-radio-group>-->
+
+    <!-- At the moment Search only by book's title -->
+    <div layout="row" layout-wrap>
+        <div ng-click="showBookInDetail(item.title);" flex="25" flex-sm="33" flex-xs="90"
+             ng-repeat="item in bookList | filter: {title: searchBook}" class="smallBook">
+            <img alt="book image" class="responsiveImg" src="images/book_image.png">
+            <div class="smallBookTitle">{{item.title}}</div>
+        </div>
+    </div>
+</div>
+

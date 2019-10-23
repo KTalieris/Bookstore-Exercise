@@ -1,0 +1,16 @@
+<div layout="row" layout-align="center center" layout-wrap class="innerContentStyle">
+    <div class="fontSize28px">Add new Book</div>
+
+
+    <form ng-submit="addBook()">
+        <input type="text" ng-model="newBook.title" value="Title">
+        <input type="text" ng-model="newBook.subtitle" value="Description">
+        <input type="text" ng-model="newBook.author" value="Author name">
+        <input type="text" ng-model="newBook.publisher" value="Publisher">
+        <input type="text" ng-model="newBook.published" value="Year">
+        <input type="text" ng-model="newBook.pages" value="Page numbers">
+        <input type="text" ng-model="newBook.isbn" value="ISBN">
+        <input type="submit" value="SAVE">
+    </form>
+
+</div>
