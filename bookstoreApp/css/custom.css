@@ -182,3 +182,9 @@ ul.slick-dots {
 md-input-container {
   margin-left: 8px!important;
 }
+.filterStyle {
+  margin: 24px 0px;
+}
+.filterStyleLabel {
+  margin-right: 16px;
+}

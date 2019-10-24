@@ -4,18 +4,19 @@
         magna aliqua.
     </div>
     <div flex="100" layout="row" layout-align="center center">
-        <input class="searchFieldStyling" flex="80" type="text" ng-model="searchBook"/>
+        <input class="searchFieldStyling" flex="80" flex-xs="90" type="text" ng-model="searchBook"/>
     </div>
-
-    <!--<md-radio-group ng-model="filterData">-->
-    <!--<md-radio-button value="name" class="md-primary">Name</md-radio-button>-->
-    <!--<md-radio-button value="email"> Email </md-radio-button>-->
-    <!--</md-radio-group>-->
-
-    <!-- At the moment Search only by book's title -->
+    <div flex="75" flex-xs="85" layout="row" layout-align="start center" class="filterStyle">
+        <span class="filterStyleLabel">Filter by: </span>
+        <md-radio-group layout="row" ng-model="radioData.filter">
+            <md-radio-button value="$" class="md-primary">Any</md-radio-button>
+            <md-radio-button value="title" class="md-primary">Title</md-radio-button>
+            <md-radio-button value="author" class="md-primary">Author</md-radio-button>
+        </md-radio-group>
+    </div>
     <div layout="row" layout-wrap>
         <div ng-click="showBookInDetail(item.title);" flex="25" flex-sm="33" flex-xs="80"
-             ng-repeat="item in bookList | filter: {title: searchBook}" class="smallBook">
+             ng-repeat="item in bookList | filter:getCustomParameter(radioData.filter, searchBook)" class="smallBook">
             <img alt="book image" class="responsiveImg" src="images/book_image.png">
             <div class="smallBookTitle">{{item.title}}</div>
         </div>

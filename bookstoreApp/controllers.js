@@ -40,7 +40,19 @@ bookStoreApp.controller('addBookController', ['$scope', '$rootScope', 'bookServi
 
 /* Controller for Search and Category Pages */
 bookStoreApp.controller('searchController', ['$scope', '$rootScope', '$resource', '$routeParams', 'bookService', function($scope, $rootScope, $resource, $routeParams, bookService) {
-    // $scope.filterData = 'name';
+
+    /* Search books with custom filters */
+    $scope.radioData = {
+        filter: '$',
+    };
+
+    $scope.getCustomParameter = function (key, value) {
+       let param = {};
+        param[key] = value;
+        return param;
+    };
+
+    /* Get the book list using the service bookService */
     $rootScope.bookList = bookService.books;
     $scope.chosenBookTitle = '';
 
