@@ -12,7 +12,8 @@ bookStoreApp.controller('addBookController', ['$scope', '$rootScope', 'bookServi
         publisher: '',
         pages: '',
         description: '',
-        website: ''
+        website: '',
+        rating : {current: 1, max: 5},
     };
 
     /* Add the new book */

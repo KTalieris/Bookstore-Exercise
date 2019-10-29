@@ -41,6 +41,12 @@
                 </md-input-container>
             </div>
             <div layout="row" layout-align="start center">
+                <span class="formInputLabel">Rating:</span>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <input type="number" value="rating" ng-model="newBook.rating.current" min="1" max="5">
+                </md-input-container>
+            </div>
+            <div layout="row" layout-align="start center">
                 <span class="formInputLabel">ISBN:</span>
                 <md-input-container class="md-block" flex-gt-sm>
                     <input type="text" ng-model="newBook.isbn" value="ISBN">

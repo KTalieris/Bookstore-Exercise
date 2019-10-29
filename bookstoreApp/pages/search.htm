@@ -15,10 +15,14 @@
         </md-radio-group>
     </div>
     <div layout="row" layout-wrap>
-        <div ng-click="showBookInDetail(item.title);" flex="25" flex-sm="33" flex-xs="80"
+        <div flex="25" flex-sm="33" flex-xs="80"
              ng-repeat="item in bookList | filter:getCustomParameter(radioData.filter, searchBook)" class="smallBook">
-            <img alt="book image" class="responsiveImg" src="images/book_image.png">
+            <img ng-click="showBookInDetail(item.title);" alt="book image" class="responsiveImg" src="images/book_image.png">
             <div class="smallBookTitle">{{item.title}}</div>
+            <!-- Stars Rating | The user can set book's rating here or in book's page -->
+            <div class="ratingInSearchPage" book-rating book-title="item.title" book-rating-val="item.rating.current"
+                 max-rating="item.rating.max">
+            </div>
         </div>
     </div>
 </div>

@@ -188,3 +188,32 @@ md-input-container {
 .filterStyleLabel {
   margin-right: 16px;
 }
+.star {
+  color: #a9a9a9;
+  margin: 0;
+  padding: 0;
+}
+ul.star {
+  display: inline-block;
+  background-color: #f9f9f9;
+}
+.star li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 1px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.star .filled {
+  color: gold;
+}
+.clear{
+  margin-top:20px;
+}
+.ratingInProductPage > .star li {
+  font-size: 46px;
+}
+.ratingInSearchPage > .star li {
+  font-size: 22px;
+}

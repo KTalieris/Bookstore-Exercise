@@ -1,11 +1,15 @@
 <div ng-model="chosenBook" class="marginBottom48px">
     <!-- If the user has selected a book show book's details -->
     <div ng-if="chosenBook" layout="row" layout-wrap layout-align="space-around start" layout-wrap class="innerContentStyle">
-        <div flex="25" flex-sm="40" flex-xs="70">
+        <div flex="25" flex-sm="40" flex-xs="75">
             <img alt="book image" class="responsiveImg" ng-src="{{chosenBook.image}}">
             <div hide-xs layout="row" layout-align="start center">
                 <img alt="avatar" class="authorAvatar" src="images/avatar.png">
                 <div class="fontSize12px marginLeft16px">{{chosenBook.author}}</div>
+            </div>
+            <!-- Stars Rating | The user can set book's rating here or in search page -->
+            <div class="ratingInProductPage" book-rating book-title="chosenBook.title" book-rating-val="chosenBook.rating.current"
+                 max-rating="chosenBook.rating.max">
             </div>
         </div>
         <div flex="40" flex-sm="50" flex-xs="90" class="md-padding">
@@ -31,7 +35,7 @@
 
     <!-- Show the default theming If user has not selected a book already -->
     <div ng-if="!chosenBook" layout="row" layout-wrap layout-align="space-around start" layout-wrap class="innerContentStyle">
-        <div flex="25" flex-sm="40" flex-xs="70">
+        <div flex="25" flex-sm="40" flex-xs="75">
             <img alt="book image" class="responsiveImg" src="images/book_no_image.png">
             <div hide-xs layout="row" layout-align="start center">
                 <img alt="avatar" class="authorAvatar" src="images/avatar.png">
@@ -61,7 +65,6 @@
         </div>
     </div>
 </div>
-<!-- Book suggestions carousel -->
 <div class="marginTop12px">
     <h4 class="bookSuggestionTitle marginBottom28px">Other books you may like</h4>
     <slick ng-if="bookList.length" init-onload="false" data="true" responsive="breakpoints" slides-to-show="4" slides-to-scroll=3 dots="true" autoplay="true"
